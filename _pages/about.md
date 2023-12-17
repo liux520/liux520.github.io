@@ -28,8 +28,6 @@ My research interest includes neural machine translation and computer vision. I 
 
 # 📝 Publications 
 
-
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2023</div><img src='images/MM23-PMSDSEN.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -68,8 +66,6 @@ My research interest includes neural machine translation and computer vision. I 
   </div>
 
   </div>
-
-
 
 # 🎖 Honors and Awards
 - *2023.11* [Xiao Mi Scholarship at Sichuan University](https://ygb.scu.edu.cn/info/1007/2748.htm) (First prize)
