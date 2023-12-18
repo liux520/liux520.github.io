@@ -26,7 +26,7 @@ My research interests mainly focus on artificial intelligence and image analysis
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2023</div><img src='images/MM23-PMSDSEN.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ACM MM 2023</div><img src='images/MM23-PMSDSEN.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Efficient Parallel Multi-Scale Detail and Semantic Encoding Network for Lightweight Semantic Segmentation](https://dl.acm.org/doi/abs/10.1145/3581783.3611848)
@@ -37,7 +37,7 @@ My research interests mainly focus on artificial intelligence and image analysis
 [**Codes**](https://github.com/liux520/PMSDSEN)<strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div></div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECAI 2023</div><img src='images/ECAI23-EIMN.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECAI 2023</div><img src='images/ECAI23-EIMN.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 [Efficient Information Modulation Network for Image Super-Resolution](https://ebooks.iospress.nl/doi/10.3233/FAIA230435)
 
