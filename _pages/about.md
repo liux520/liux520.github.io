@@ -49,6 +49,12 @@ My research interests mainly focus on artificial intelligence and image analysis
 </div>
 </div>
 
+- `ICCV 2023`  [Random Sub-Samples Generation for Self-Supervised Real Image Denoising](https://openaccess.thecvf.com/content/ICCV2023/html/Pan_Random_Sub-Samples_Generation_for_Self-Supervised_Real_Image_Denoising_ICCV_2023_paper.html), Yizhong Pan, **Xiao Liu**, Xiangyu Liao, Yuanzhouhan Cao, Chao Ren*
+
+- `ICCV 2023`  [Unsupervised Image Denoising in Real-World Scenarios via Self-Collaboration Parallel Generative Adversarial Branches](https://openaccess.thecvf.com/content/ICCV2023/html/Lin_Unsupervised_Image_Denoising_in_Real-World_Scenarios_via_Self-Collaboration_Parallel_Generative_ICCV_2023_paper.html), Xin Lin, Chao Ren*, **Xiao Liu**, Jie Huang, Yinjie Lei
+
+- `TII 2022`  [CasaPuNet: Channel Affine Self-Attention- Based Progressively Updated Network for Real Image Denoising](https://ieeexplore.ieee.org/document/9969152/), Jie Huang, **Xiao Liu**, Yizhong Pan, Xiaohai He, Chao Ren*
+
 # 🎖 Honors and Awards
 - *2023.11* [Xiao Mi Scholarship at Sichuan University](https://ygb.scu.edu.cn/info/1007/2748.htm) (First prize)
 - *2023.08* [ICDT华为终端新型显示技术竞赛.](https://github.com/liux520/liux520.github.io/blob/main/images/HUAWEI.png) (First prize)
