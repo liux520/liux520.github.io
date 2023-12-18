@@ -21,8 +21,9 @@ redirect_from:
 My research interests mainly focus on artificial intelligence and image analysis. Specifically, I work on low-level image restoration, high-level visual comprehension, and exploring the collaborative interactions between them. Check out my [CV]() and News below 🚀.
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2023.07*: &nbsp;🎉🎉 One paper was accepted by ACM International Conference on Multimedia (ACM MM 2023).
+- *2023.07*: &nbsp;🎉🎉 One paper was accepted by  European Conference on Artificial Intelligence (ECAI 2023).
+- *2023.07*: &nbsp;🎉🎉 Two paper was accepted by International Conference on Computer Vision (ICCV 2023).
 
 # 📝 Publications 
 
