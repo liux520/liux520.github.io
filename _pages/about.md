@@ -65,4 +65,3 @@ redirect_from:
 - **Conference Reviewer**: ACM MM2023
 
 # 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
