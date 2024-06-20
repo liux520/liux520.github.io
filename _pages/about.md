@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-😃 Hey! I'm Xiao Liu (刘晓), a graduate student at Sichuan University, advised by Prof. [Chao Ren](https://scholar.google.com/citations?user=Y6OuBMYAAAAJ). My research interests mainly focus on artificial intelligence and image analysis. Specifically, I work on low-level image restoration, high-level visual comprehension, and exploring the collaborative interactions between them. Check out my [CV]() and News below 🚀.
+😃 Hey! I'm Xiao Liu (刘晓), a Ph.D. student at Sichuan University, advised by Prof. [Chao Ren](https://scholar.google.com/citations?user=Y6OuBMYAAAAJ). My research interests mainly focus on artificial intelligence and image analysis. Specifically, I work on low-level image restoration, high-level visual comprehension, and exploring the collaborative interactions between them. Check out my [CV]() and News below 🚀.
 
 # 🔥 News
 - *2023.07*: &nbsp;🎉🎉 One paper was accepted by ACM International Conference on Multimedia (ACM MM 2023).
@@ -69,7 +69,8 @@ Yizhong Pan, **Xiao Liu**, Xiangyu Liao, Yuanzhouhan Cao, Chao Ren*
 - *2023.08* [ICDT华为终端新型显示技术竞赛.](images/ICDT-2023.jpg) (First prize)
 
 # 📖 Educations
-- *2021.09 - 2024.06*, graduate student, Sichuan University.
+- *2024.09 - *, PhD, Sichuan University.
+- *2021.09 - 2024.06*, Master, Sichuan University.
 
 # 💬 Service
 - **Journal Reviewer**: 
