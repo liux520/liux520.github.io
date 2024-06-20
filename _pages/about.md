@@ -69,7 +69,7 @@ Yizhong Pan, **Xiao Liu**, Xiangyu Liao, Yuanzhouhan Cao, Chao Ren*
 - *2023.08* [ICDT华为终端新型显示技术竞赛.](images/ICDT-2023.jpg) (First prize)
 
 # 📖 Educations
-- *2024.09 - *, PhD, Sichuan University.
+- *2024.09 - now*, PhD, Sichuan University.
 - *2021.09 - 2024.06*, Master, Sichuan University.
 
 # 💬 Service
