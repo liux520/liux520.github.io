@@ -1,0 +1,369 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   LOCAL FONTS
+   ============================================ */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-v20-latin/inter-v20-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin/crimson-pro-v28-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin/crimson-pro-v28-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('/fonts/crimson-pro-v28-latin/crimson-pro-v28-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/fonts/space-mono-v17-latin/space-mono-v17-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/fonts/space-mono-v17-latin/space-mono-v17-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================
+   DESIGN SYSTEM: Academic Editorial
+   Neutral surfaces with restrained cobalt emphasis
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Neutral backgrounds */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
+
+    /* Semantic color references */
+    --color-primary-light: 214 95% 86%;  /* primary-200 */
+    --color-primary: 217 91% 60%;        /* primary-500 */
+    --color-primary-dark: 221 83% 53%;   /* primary-700 */
+
+    --color-accent: 173 80% 40%;         /* accent-500 */
+  }
+
+  .dark {
+    --background: 224 76% 10%;
+    --foreground: 210 40% 98%;
+  }
+
+  /* Base typography settings */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-slate-100/70 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-800 dark:text-slate-200;
+  }
+
+  /* Heading typography - using Crimson Pro display font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-heading tracking-tight;
+  }
+
+  /* Body text - using Inter sans font */
+  p {
+    @apply font-sans font-body;
+  }
+
+  /* Monospace for code/technical */
+  code, pre, .mono {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  /* ============================================
+     GRADIENT TEXT UTILITIES
+     ============================================ */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-primary-700 dark:from-white dark:to-primary-300;
+  }
+
+  .text-gradient-subtle {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 dark:from-slate-400 dark:via-slate-300 dark:to-slate-200;
+  }
+
+  .text-gradient-indigo {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-primary-700 dark:from-white dark:to-primary-300;
+  }
+
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+
+  /* ============================================
+     CARD UTILITIES
+     Enhanced glass morphism with refined shadows
+     ============================================ */
+  .card-hover {
+    @apply transition-all duration-400 ease-premium hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .card-press {
+    @apply transition-all duration-200 active:scale-[0.98] active:shadow-card;
+  }
+
+  .glass {
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-white/40 dark:border-slate-700/40;
+  }
+
+  .glass-subtle {
+    @apply bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-white/20 dark:border-slate-700/20;
+  }
+
+  /* ============================================
+     SECTION TRANSITIONS
+     ============================================ */
+  .section-fade {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger children animations */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: staggerIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 75ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 225ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 300ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 375ms; }
+  .stagger-children > *:nth-child(7) { animation-delay: 450ms; }
+  .stagger-children > *:nth-child(8) { animation-delay: 525ms; }
+
+  @keyframes staggerIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   Refined, minimal scrollbars
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100/80 dark:bg-slate-800/80;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full hover:bg-primary-400 dark:hover:bg-primary-500 transition-colors duration-200;
+}
+
+/* Thin scrollbar for scrollable containers */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(199 210 254) transparent;
+}
+
+.dark .scrollbar-thin {
+  scrollbar-color: rgb(71 85 105) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full hover:bg-primary-400 dark:hover:bg-primary-500 transition-colors duration-200;
+}
+
+/* ============================================
+   TEXT SELECTION
+   ============================================ */
+::selection {
+  @apply bg-primary-500/20 text-primary-900 dark:bg-primary-500/30 dark:text-primary-100;
+}
+
+/* ============================================
+   ANIMATED GRADIENT BACKGROUND
+   Uses neutral surfaces with cobalt accent
+   ============================================ */
+.gradient-bg {
+  background: linear-gradient(-45deg,
+    #3b82f6, /* primary-500 */
+    #2563eb, /* primary-600 */
+    #0d9488, /* accent-600 */
+    #2563eb, /* primary-600 */
+    #3b82f6  /* back to primary */
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   GLOW BORDER EFFECT
+   Sophisticated animated border glow
+   ============================================ */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  @apply rounded-xl bg-gradient-to-r from-primary-500 via-primary-600 to-accent-500 opacity-0 blur-md transition-opacity duration-500;
+  z-index: -1;
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
+}
+
+.glow-border:hover::before {
+  @apply opacity-60;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ============================================
+   PARTICLE ANIMATION
+   Floating particles for hero section
+   ============================================ */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  @apply rounded-full bg-primary-400/20;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   NOISE TEXTURE OVERLAY
+   Adds subtle texture for premium feel
+   ============================================ */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   TYPE HIGHLIGHTING
+   For emphasizing key information
+   ============================================ */
+.highlight-box {
+  @apply relative px-3 py-1 -mx-3 bg-primary-50/50 dark:bg-primary-950/30 rounded-lg border-l-2 border-primary-500;
+}
+
+/* ============================================
+   FOCUS STYLES
+   Accessible focus indicators
+   ============================================ */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   Fluid scaling for different screen sizes
+   ============================================ */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 17px;
+  }
+}
