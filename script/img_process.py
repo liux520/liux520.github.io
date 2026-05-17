@@ -127,10 +127,13 @@ def main(input_path, output_path, quality, resize=None, format='webp', dry_run=F
         return 1
 
     # Collect all supported images
-    image_files = [
-        f for f in input_dir.iterdir()
-        if f.is_file() and f.suffix.lower() in SUPPORTED_INPUT_FORMATS
-    ]
+    if os.path.isdir(input_dir):
+        image_files = [
+            f for f in input_dir.iterdir()
+            if f.is_file() and f.suffix.lower() in SUPPORTED_INPUT_FORMATS
+        ]
+    else:
+        image_files = [input_dir]
 
     if not image_files:
         print(f"No supported images found in '{input_dir}'")
@@ -179,8 +182,8 @@ def main(input_path, output_path, quality, resize=None, format='webp', dry_run=F
 
 if __name__ == '__main__':
     main(
-        input_path='../public/papers',
-        output_path='../public/papers',
+        input_path=r'../public/images/hyt-3.jpg',
+        output_path=r'../public/images',
         quality=80,
         resize=None,
         format='webp',

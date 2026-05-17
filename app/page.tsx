@@ -520,21 +520,29 @@ function Hero() {
       url: '/images/my-2.webp',
       title: 'Campus'
     },
+    // {
+    //   url: '/images/my-3.webp',
+    //   title: 'Campus'
+    // },
     {
-      url: '/images/my-3.webp',
+      url: '/images/hyt-1.webp',
+      title: 'AI Research Lab'
+    },
+    {
+      url: '/images/hyt-2.webp',
       title: 'Campus'
     },
-    // {
-    //   url: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80',
-    //   title: 'AI Research Lab'
-    // }
+    {
+      url: '/images/hyt-3.webp',
+      title: 'Campus'
+    },
   ]
 
-  // Auto-rotate images every 6 seconds
+  // Auto-rotate images every 6 seconds  20250517 2s
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % backgroundImages.length)
-    }, 6000)
+    }, 2000)
     return () => clearInterval(interval)
   }, [backgroundImages.length])
 
