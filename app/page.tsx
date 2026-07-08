@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Script from 'next/script'
 import {
   User,
   Newspaper,
@@ -714,73 +715,46 @@ function Hero() {
         </motion.div>
       </div>
 
-      {/* Image Thumbnails - Bottom Right - Redesigned */}
-      <div className="absolute bottom-6 right-4 sm:bottom-8 sm:right-8 z-20 hidden sm:block">
-        <div className="flex flex-col gap-2 items-end">
-          {/* Navigation arrows */}
-          <div className="flex gap-1 p-1 bg-black/40 backdrop-blur-md rounded-full border border-white/10">
-            <button
-              onClick={goToPrev}
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 flex items-center justify-center"
-              aria-label="Previous image"
-            >
-              <ChevronRight className="w-4 h-4 rotate-180" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 flex items-center justify-center"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+      {/* Hero carousel controls */}
+      <div className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 sm:bottom-8">
+        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-2.5 py-1.5 text-white backdrop-blur-sm">
+          <button
+            onClick={goToPrev}
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-300/80 focus:ring-offset-2 focus:ring-offset-slate-950"
+            aria-label="Previous image"
+          >
+            <ChevronRight className="h-4 w-4 rotate-180" />
+          </button>
 
-          {/* Thumbnails - aligned with arrows width */}
-          <div className="flex flex-col gap-1.5">
+          <div className="flex items-center gap-1">
             {backgroundImages.map((image, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`relative w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'border-primary-400 scale-105 shadow-lg shadow-primary-400/30'
-                    : 'border-white/20 opacity-50 hover:opacity-80 hover:border-white/40'
-                }`}
-                aria-label={`Go to slide ${index + 1}: ${image.title}`}
+                className="flex h-6 w-4 cursor-pointer items-center justify-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300/80 focus:ring-offset-2 focus:ring-offset-slate-950"
+                aria-label={`Go to image ${index + 1} of ${backgroundImages.length}`}
+                aria-current={index === currentIndex ? 'true' : undefined}
+                title={image.title}
               >
-                <Image
-                  src={image.url}
-                  alt={image.title}
-                  fill
-                  className="object-cover"
-                  sizes="80px"
+                <span
+                  className={`block h-1.5 w-1.5 rounded-full transition-colors duration-200 ${
+                    index === currentIndex ? 'bg-white' : 'bg-white/35 hover:bg-white/70'
+                  }`}
                 />
-                {/* Active indicator */}
-                {index === currentIndex && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="absolute inset-0 bg-primary-400/30"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-                {/* Slide number */}
-                <div className="absolute bottom-1 left-1 px-1.5 py-0.5 bg-black/60 backdrop-blur-sm rounded text-white text-[10px] font-medium">
-                  {index + 1}
-                </div>
+                <span className="sr-only">
+                  Go to image {index + 1} of {backgroundImages.length}
+                </span>
               </button>
             ))}
           </div>
 
-          {/* Progress bar - Deep Indigo gradient */}
-          <div className="w-20 h-0.5 bg-white/20 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-gradient-to-r from-primary-500 to-primary-600"
-              initial={{ width: '0%' }}
-              animate={{ width: '100%' }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-              key={currentIndex}
-            />
-          </div>
+          <button
+            onClick={goToNext}
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-primary-300/80 focus:ring-offset-2 focus:ring-offset-slate-950"
+            aria-label="Next image"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
         </div>
       </div>
 
@@ -1510,8 +1484,18 @@ function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Xiao Liu. All rights reserved.</p>
-          <p className="mt-2">Built with Next.js, Tailwind CSS, and Framer Motion</p>
+          <Script
+            async
+            src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+            strategy="afterInteractive"
+          />
+          <div className="flex flex-col items-center gap-2 leading-relaxed">
+            <p className="m-0">&copy; {new Date().getFullYear()} Xiao Liu. All rights reserved.</p>
+            <p className="m-0">Built with Next.js, Tailwind CSS, and Framer Motion</p>
+            <span id="busuanzi_container_site_pv" className="block">
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          </div>
         </div>
       </div>
     </footer>
