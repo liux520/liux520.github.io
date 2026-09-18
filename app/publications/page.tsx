@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { BookOpen, ArrowLeft, ExternalLink, Download, Code, Award } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import CiteButton from '../components/CiteButton'
+import { publicationCitations } from '../publicationCitations'
 
 interface Publication {
   title: string
@@ -17,6 +19,7 @@ interface Publication {
   ccfRank?: 'A' | 'B' | 'C'
   image?: string
   abstract?: string
+  showCite?: boolean
   links: {
     pdf?: string
     code?: string
@@ -31,6 +34,7 @@ const allPublications: Publication[] = [
     venue: 'IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)',
     year: '2026',
     type: 'journal',
+    showCite: true, // Set to false to hide the Cite button
     impactFactor: 18.6,
     // award: 'most',
     image: 'papers/TPAMI-2025-Xiao Liu.webp',
@@ -263,7 +267,7 @@ export default function PublicationsPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/90 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-card hover:shadow-card-lg transition-all duration-400 ease-premium group overflow-hidden mb-4 sm:mb-6"
+              className="relative bg-white/90 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-card hover:shadow-card-lg transition-all duration-400 ease-premium group overflow-visible mb-4 sm:mb-6"
             >
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 {/* Paper Image - Top on Mobile / Left Side on Desktop */}
@@ -376,6 +380,12 @@ export default function PublicationsPage() {
                         <Code className="w-3.5 h-3.5" />
                         Code
                       </a>
+                    )}
+                    {pub.showCite !== false && (
+                      <CiteButton
+                        citation={publicationCitations[pub.title]}
+                        title={pub.title}
+                      />
                     )}
                     {pub.links.project && (
                       <a

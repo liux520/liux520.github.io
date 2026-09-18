@@ -28,6 +28,8 @@ import {
   Twitter,
 } from 'lucide-react'
 import Image from 'next/image'
+import CiteButton from './components/CiteButton'
+import { publicationCitations } from './publicationCitations'
 
 const navItems = [
   { name: 'Profile', icon: User, href: '#profile' },
@@ -135,6 +137,7 @@ interface Publication {
   impactFactor?: number | string
   ccfRank?: 'A' | 'B' | 'C'
   image?: string
+  showCite?: boolean
   links: {
     pdf?: string
     code?: string
@@ -149,7 +152,8 @@ const publications: Publication[] = [
     venue: 'IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)',
     year: '2025',
     type: 'journal',
-    impactFactor: 18.6,
+    showCite: true, // Set to false to hide the Cite button
+    impactFactor: 20.0,
     // award: 'most',
     image: 'papers/TPAMI-2025-Xiao Liu.webp',
     links: { pdf: 'https://www.sciencedirect.com/science/article/abs/pii/S095070512501682X', code: 'https://github.com/liux520/D2S-RSG-SSD' },
@@ -233,7 +237,7 @@ const publications: Publication[] = [
     type: 'conference',
     ccfRank: 'A',
     image: 'papers/ICCV-2023-Yizhong Pan.webp', // Add your paper thumbnail image
-    links: { pdf: 'https://openaccess.thecvf.com/content/ICCV2023/html/Pan_Random_Sub-Samples_Generation_for_Self-Supervised_Real_Image_Denoising_ICCV_2023_paper.html', code: '#', project: 'https://github.com/p1y2z3/SDAP' },
+    links: { pdf: 'https://openaccess.thecvf.com/content/ICCV2023/html/Pan_Random_Sub-Samples_Generation_for_Self-Supervised_Real_Image_Denoising_ICCV_2023_paper.html', code: 'https://github.com/p1y2z3/SDAP'},
   },
   {
     title: 'CasaPuNet: Channel Affine Self-Attention- Based Progressively Updated Network for Real Image Denoising',
@@ -1022,7 +1026,7 @@ function Publications() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white/90 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-card hover:shadow-card-lg transition-all duration-400 ease-premium group overflow-hidden"
+                  className="relative bg-white/90 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-card hover:shadow-card-lg transition-all duration-400 ease-premium group overflow-visible"
                 >
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     {/* Paper Image - Left Side / Top on Mobile */}
@@ -1128,6 +1132,12 @@ function Publications() {
                             <Code className="w-3.5 h-3.5" />
                             Code
                           </a>
+                        )}
+                        {pub.showCite !== false && (
+                          <CiteButton
+                            citation={publicationCitations[pub.title]}
+                            title={pub.title}
+                          />
                         )}
                         {pub.links.project && (
                           <a
