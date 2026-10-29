@@ -60,6 +60,11 @@ const navLinksConfig = {
 // January February March April May June July August September October November December
 const news = [
   {
+    date: 'October 2026',
+    title: 'Paper accepted at TMM',
+    description: 'Our research on Unpaired Image Dehazing has been accepted at TMM.',
+    type: 'publication',
+  },{
     date: 'February 2026',
     title: 'Paper accepted at TPAMI',
     description: 'Our research on Self-Supervised Image Denoising has been accepted at TPAMI.',
