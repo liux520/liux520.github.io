@@ -5,6 +5,20 @@ export interface PublicationCitation {
 }
 
 export const publicationCitations: Record<string, PublicationCitation> = {
+  'Progressive Supervision with Disentangled Learning and Density-Aware for Image Dehazing from Unpaired Clean and Hazy Images': {
+    standard: 'Liu X, Wang Z, Yang H, et al. Progressive Supervision with Disentangled Learning and Density-Aware for Image Dehazing from Unpaired Clean and Hazy Images[J]. IEEE Transactions on Multimedia, 2026.',
+    fullAuthor: 'Xiao Liu, Xiaofeng Wang and Chao Ren. Progressive Supervision with Disentangled Learning and Density-Aware for Image Dehazing from Unpaired Clean and Hazy Images[J]. IEEE Transactions on Multimedia, 2026.',
+    bibtex: String.raw`@article{liu2025transformer,
+  title={Progressive Supervision with Disentangled Learning and Density-Aware for Image Dehazing from Unpaired Clean and Hazy Images},
+  author={Liu, Xiao and Wang, Xiaofeng and Ren, Chao},
+  journal={IEEE Transactions on Multimedia},
+  volume={},
+  number={},
+  pages={},
+  year={2026},
+  publisher={IEEE}
+}`,
+  },
   'Transformer-Style Convolutional Network for Efficient Natural and Industrial Image Superresolution': {
     standard: 'Liu X, Wang Z, Yang H, et al. Transformer-style convolutional network for efficient natural and industrial image superresolution[J]. IEEE Transactions on Industrial Informatics, 2025, 21(7): 5138-5149.',
     fullAuthor: 'Xiao Liu, Zhengyong Wang, Hong Yang, Xiaohai He and Chao Ren. Transformer-style convolutional network for efficient natural and industrial image superresolution[J]. IEEE Transactions on Industrial Informatics, 2025, 21(7): 5138-5149.',

@@ -28,6 +28,19 @@ interface Publication {
 }
 
 const allPublications: Publication[] = [
+    {
+    title: 'Progressive Supervision with Disentangled Learning and Density-Aware for Image Dehazing from Unpaired Clean and Hazy Images',
+    authors: 'Xiao Liu, Xiaofeng Wang, Chao Ren',
+    venue: 'IEEE Transactions on Multimedia (TMM)',
+    year: '2026',
+    type: 'journal',
+    showCite: true, // Set to false to hide the Cite button
+    impactFactor: 9.9,
+    // award: 'most',
+    image: 'papers/TMM-2026-Xiao Liu.webp',
+    abstract: 'PSUID learns from independent clean and hazy image collections. It does not require geometrically aligned real hazy-clean training pairs, and retains only one NAFNet-based restoration network at inference time.',
+    links: { pdf: 'https://github.com/liux520/PSUID', code: 'https://github.com/liux520/PSUID' },
+  },
   {
     title: 'D2S-RSG-SSD: Dual Double-Sampling with Random Sub-Samples Generation for Self-Supervised Real Image Denoising',
     authors: 'Xiao Liu, Xiuya Shi, Yizhong Pan, Shuhang Gu, Wei Liu, Chao Ren',
@@ -35,7 +48,7 @@ const allPublications: Publication[] = [
     year: '2026',
     type: 'journal',
     showCite: true, // Set to false to hide the Cite button
-    impactFactor: 18.6,
+    impactFactor: 20.4,
     // award: 'most',
     image: 'papers/TPAMI-2025-Xiao Liu.webp',
     abstract: 'This paper proposes a novel synthetic degradation pipeline for real-world blind image super-resolution, using mixed and probabilistic schemes to better model complex real-world degradations.',
