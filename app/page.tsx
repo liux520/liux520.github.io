@@ -829,7 +829,7 @@ function Profile() {
               I have published six first-author papers in leading international journals and conferences, including IEEE Transactions on Pattern Analysis and Machine Intelligence, IEEE Transactions on Neural Networks and Learning Systems, IEEE Transactions on Industrial Informatics, and Knowledge-Based Systems, as well as ACM Multimedia (CCF-A) and the European Conference on Artificial Intelligence (CCF-B).
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed text-justify">
-              For more details, please refer to my <a href="#" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">CV</a>.
+              For more details, please refer to my <a href="/resume/Xiao Liu-Resume.pdf" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">CV</a>.
             </p>
 
             <div className="mt-10">
