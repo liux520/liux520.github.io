@@ -281,6 +281,17 @@ const publications: Publication[] = [
 // award | grant | service
 const honors = [
   {
+    title: 'National Scholarship',
+    organization: 'Ministry of Education of China',
+    year: '2026',
+    category: 'award' as const,
+  },{
+    title: 'Outstanding Graduate Student',
+    organization: 'Sichuan University',
+    year: '2026',
+    category: 'award' as const,
+  },
+  {
     title: 'Sichuan University Academic Star',
     organization: 'Sichuan University',
     year: '2025',
