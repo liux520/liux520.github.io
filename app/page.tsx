@@ -334,7 +334,7 @@ const honors = [
 const education = [
   {
     degree: 'Ph.D. in Information and Communication Engineering',
-    institution: 'Sichuan of Technology',
+    institution: 'Sichuan University',
     location: 'Chengdu, China',
     period: '2024 - 2028',
     advisor: 'Prof. Chao Ren',
