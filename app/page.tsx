@@ -700,7 +700,7 @@ function Hero() {
             transition={{ delay: 0.55, duration: 0.6 }}
             className="text-xs sm:text-sm text-slate-300 mb-4 sm:mb-6 lg:mb-8 tracking-wide"
           >
-            <span className="hidden sm:inline">College of Electronics and Information Engineering</span>
+            {/*<span className="hidden sm:inline">College of Electronics and Information Engineering</span>*/}
             <span className="inline sm:hidden">Sichuan University</span>
             <span className="mx-2 text-slate-500">|</span>
             PhD
@@ -1523,15 +1523,14 @@ function Footer() {
 
         <div className="mt-8 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
           <Script
-            async
-            src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+            src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js"
             strategy="afterInteractive"
           />
           <div className="flex flex-col items-center gap-2 leading-relaxed">
             <p className="m-0">&copy; {new Date().getFullYear()} Xiao Liu. All rights reserved.</p>
-            <p className="m-0">Built with Next.js, Tailwind CSS, and Framer Motion</p>
-            <span id="busuanzi_container_site_pv" className="block">
-              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            {/*<p className="m-0">Built with Next.js, Tailwind CSS, and Framer Motion</p>*/}
+            <span className="block">
+              本站总访问量<span id="busuanzi_site_pv">加载中...</span>次
             </span>
           </div>
         </div>
