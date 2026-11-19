@@ -701,7 +701,8 @@ function Hero() {
             className="text-xs sm:text-sm text-slate-300 mb-4 sm:mb-6 lg:mb-8 tracking-wide"
           >
             {/*<span className="hidden sm:inline">College of Electronics and Information Engineering</span>*/}
-            <span className="inline sm:hidden">Sichuan University</span>
+            {/*<span className="inline sm:hidden">Sichuan University</span>*/}
+            <span>Sichuan University</span>
             <span className="mx-2 text-slate-500">|</span>
             PhD
           </motion.p>
